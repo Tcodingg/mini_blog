@@ -1,8 +1,9 @@
 const express = require("express");
+const getPosts = require("../controllers/posts");
+const createPost = require("../models/postMessage");
 
 const router = express.Router();
-router.get("/", (req, res) => {
-   res.send("posts page");
-});
+router.get("/", getPosts);
+router.post("/", createPost);
 
 module.exports = router;
