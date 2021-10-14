@@ -1,15 +1,16 @@
 const PostMessage = require("../models/postMessage");
 const getPost = async (req, res) => {
    try {
-      const postMessage = await PostMessage.find();
-      console.log(postMessage);
+      const postMessage = await PostMessage.find({});
+      // console.log(postMessage);
       res.status(200).json(postMessage);
-   } catch (error) {}
-   res.send("posts page with controllers");
+   } catch (error) {
+      console.log(error);
+   }
 };
 
 const createPost = async (req, res) => {
-   const post = req.body.postData;
+   const post = req.body.post;
    const newPost = new PostMessage(post);
 
    try {

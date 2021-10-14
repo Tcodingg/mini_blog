@@ -19,9 +19,6 @@ const Form = () => {
    }
 
    function handleAdd() {
-      // axios.post("http://localhost:5000/posts", {
-      //    postData,
-      // });
       dispatch(createPost(postData));
       console.log(postData);
 
@@ -38,6 +35,7 @@ const Form = () => {
          <div className="form-container section">
             <div className="form">
                <input type="text" name="title" onChange={handleChange} />
+               <input type="text" name="creator" onChange={handleChange} />
                <textarea type="text" name="note" onChange={handleChange} />
                <input type="text" name="tags" onChange={handleChange} />
 
