@@ -9,7 +9,7 @@ const getPost = async (req, res) => {
 };
 
 const createPost = async (req, res) => {
-   const post = req.body;
+   const post = req.body.postData;
    const newPost = new PostMessage(post);
 
    try {
@@ -20,4 +20,4 @@ const createPost = async (req, res) => {
    }
 };
 
-module.exports = getPost;
+module.exports = { getPost, createPost };
