@@ -1,11 +1,11 @@
-import Form from "./Form/Form";
+import MiniBlog from "./MiniBlog/MiniBlog";
 import Header from "./Header/Header";
-import Posts from "./Posts/Posts";
 
 const App = () => {
    return (
       <div>
          <Header />
+         <MiniBlog />
       </div>
    );
 };
