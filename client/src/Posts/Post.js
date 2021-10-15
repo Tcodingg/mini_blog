@@ -9,9 +9,9 @@ const Post = () => {
          <h5>camero z1</h5>
          <img src={camaro_2021} alt="" />
          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-            architecto praesentium is molestiae corrupti iste dolor. A est
-            labore illum error!
+            Lorem ipsum dolor sit amet lia consectetur adipisicing elit. Ini
+            architecto praesentium is mila molestiae. A est labore illum lk akle
+            error!
          </p>
          <div className="icons-container">
             <div className="thumbup-counter icons">

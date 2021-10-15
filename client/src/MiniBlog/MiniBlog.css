@@ -1,5 +1,14 @@
 .mini-blog-container {
-   display: grid;
+   /* display: grid;
    grid-template-columns: 3fr 1fr;
-   gap: 10px;
+   gap: 10px; */
+   display: flex;
+   justify-content: space-around;
+   gap: 33px;
+}
+
+@media only screen and (max-width: 894px) {
+   .mini-blog-container {
+      flex-direction: column-reverse;
+   }
 }
