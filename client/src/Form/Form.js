@@ -32,23 +32,37 @@ const Form = () => {
 
    return (
       <div>
-         <div className="form-container section">
-            <div className="form">
-               <input type="text" name="title" onChange={handleChange} />
-               <input type="text" name="creator" onChange={handleChange} />
-               <textarea type="text" name="note" onChange={handleChange} />
-               <input type="text" name="tags" onChange={handleChange} />
+         <div className="form-container ">
+            <h5 className="title">share your blog</h5>
 
-               <div>
-                  <FileBase64
-                     type="file"
-                     multiple={false}
-                     onDone={({ base64 }) =>
-                        setPostData({ ...postData, image: base64 })
-                     }
-                  />
-               </div>
-               <button onClick={handleAdd}>ADD</button>
+            <div className="form">
+               <input
+                  type="text"
+                  name="title"
+                  onChange={handleChange}
+                  placeholder="Title"
+               />
+               {/* <input type="text" name="creator" onChange={handleChange} /> */}
+
+               <FileBase64
+                  type="file"
+                  background="red"
+                  multiple={false}
+                  onDone={({ base64 }) =>
+                     setPostData({ ...postData, image: base64 })
+                  }
+               />
+
+               <textarea
+                  type="text"
+                  name="note"
+                  onChange={handleChange}
+                  placeholder="Note..."
+               />
+
+               {/* <input type="text" name="tags" onChange={handleChange} /> */}
+
+               <button onClick={handleAdd}>Post</button>
             </div>
          </div>
       </div>
