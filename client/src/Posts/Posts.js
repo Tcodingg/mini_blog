@@ -22,6 +22,7 @@ const Posts = () => {
                      <div>
                         <h1>{posts.title}</h1>
                         <img width="200px" src={posts.image} alt="loading..." />
+                        <p></p>
                         <div>{moment(posts.createdAt).fromNow()}</div>
                      </div>
                   );
