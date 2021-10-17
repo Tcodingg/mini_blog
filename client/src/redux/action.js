@@ -6,7 +6,7 @@ const url = "http://localhost:5000/posts";
 
 export const getPost = () => async (dispatch) => {
    try {
-      const { data } = await axios.get("http://localhost:5000/posts");
+      const { data } = await axios.get(url);
       dispatch({
          type: actions.GET_POST,
          payload: data,
@@ -25,7 +25,7 @@ export const createPost = (post) => async (dispatch) => {
          payload: data,
       });
 
-      console.log(data);
+      // console.log(data);
    } catch (err) {
       console.log(err);
    }
@@ -46,4 +46,16 @@ export const deletePosts = (post_id) => async (dispatch) => {
       console.log(error);
    }
    // console.log(post_id);
+};
+
+export const likePost = (id) => async (dispatch) => {
+   try {
+      const { data } = await axios.patch(`${url}/${id}/likePost`);
+      dispatch({
+         type: actions.LIKE_POST,
+         payload: data,
+      });
+   } catch (error) {
+      console.log(error);
+   }
 };

@@ -15,7 +15,7 @@ const Posts = () => {
    }, [dispatch]);
 
    const state = useSelector((state) => state.reducer);
-   console.log(state);
+   // console.log(state);
    return (
       <div className="">
          {!state ? (
@@ -30,6 +30,7 @@ const Posts = () => {
                            note={posts.note}
                            image={posts.image}
                            id={posts._id}
+                           like={posts.likeCount}
                         />
                      </div>
                   );

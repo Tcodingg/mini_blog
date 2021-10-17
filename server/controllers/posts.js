@@ -1,5 +1,10 @@
 const mongoose = require("mongoose");
+const express = require("express");
+
 const PostMessage = require("../models/postMessage");
+
+const router = express.Router();
+
 const getPost = async (req, res) => {
    try {
       const postMessage = await PostMessage.find({});
@@ -33,4 +38,21 @@ const deletePost = async (req, res) => {
    //console.log(`item with id ${id} was deleted`);
 };
 
-module.exports = { getPost, createPost, deletePost };
+// like post
+const likePost = async (req, res) => {
+   const { id } = req.params;
+
+   if (!mongoose.Types.ObjectId.isValid(id))
+      return res.status(404).send(`No post with id: ${id}`);
+
+   const post = await PostMessage.findById(id);
+
+   const updatedPost = await PostMessage.findByIdAndUpdate(
+      id,
+      { likeCount: post.likeCount + 1 },
+      { new: true }
+   );
+
+   res.json(updatedPost);
+};
+module.exports = { getPost, createPost, deletePost, likePost, router };
