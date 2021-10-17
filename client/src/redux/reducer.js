@@ -5,6 +5,8 @@ const reducer = (state = [], action) => {
          return action.payload;
       case actions.CREATE_POST:
          return [...state, action.payload];
+      case actions.DELETE_POST:
+         return state.filter((id) => id._id !== action.payload);
 
       default:
          return state;

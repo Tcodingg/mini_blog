@@ -9,7 +9,6 @@ const Form = () => {
    const [postData, setPostData] = useState({
       title: "",
       note: "",
-      tags: [],
       image: "",
    });
    const dispatch = useDispatch();
@@ -18,15 +17,13 @@ const Form = () => {
       setPostData({ ...postData, [name]: value });
    }
 
-   function handleAdd() {
+   function handlePost() {
       dispatch(createPost(postData));
-      console.log(postData);
+      //console.log(postData);
 
       setPostData({
          title: "",
          note: "",
-         tags: [],
-         image: "",
       });
    }
 
@@ -41,6 +38,7 @@ const Form = () => {
                   name="title"
                   onChange={handleChange}
                   placeholder="Title"
+                  value={postData.title}
                />
                {/* <input type="text" name="creator" onChange={handleChange} /> */}
 
@@ -58,11 +56,12 @@ const Form = () => {
                   name="note"
                   onChange={handleChange}
                   placeholder="Note..."
+                  value={postData.note}
                />
 
                {/* <input type="text" name="tags" onChange={handleChange} /> */}
 
-               <button onClick={handleAdd}>Post</button>
+               <button onClick={handlePost}>Post</button>
             </div>
          </div>
       </div>

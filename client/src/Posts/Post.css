@@ -59,7 +59,7 @@
 
 @media only screen and (max-width: 894px) {
    .posts {
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      /* margin: auto; */
+      grid-template-columns: repeat(auto-fit, minmax(241px, 1fr));
+    
    }
 }

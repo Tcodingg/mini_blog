@@ -12,43 +12,30 @@ const Posts = () => {
 
    useEffect(() => {
       dispatch(getPost());
-   }, []);
+   }, [dispatch]);
 
    const state = useSelector((state) => state.reducer);
    console.log(state);
    return (
-      <div className="posts">
-         <Post />
-         <Post />
-         <Post />
-         <Post />
-         <Post />
-         <Post />
-         <Post />
-         <Post />
-         <Post />
-         <Post />
-         <Post />
-         <Post />
-         <Post />
-         <Post />
-
-         {/* {!state ? (
+      <div className="">
+         {!state ? (
             "loading"
          ) : (
-            <div>
+            <div className="posts">
                {state.map((posts) => {
                   return (
                      <div>
-                        <h1>{posts.title}</h1>
-                        <img width="200px" src={posts.image} alt="loading..." />
-                        <p></p>
-                        <div>{moment(posts.createdAt).fromNow()}</div>
+                        <Post
+                           title={posts.title}
+                           note={posts.note}
+                           image={posts.image}
+                           id={posts._id}
+                        />
                      </div>
                   );
                })}
             </div>
-         )} */}
+         )}
       </div>
    );
 };
